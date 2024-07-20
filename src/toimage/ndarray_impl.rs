@@ -1,5 +1,5 @@
 use super::*;
-use image::{GrayImage, ImageBuffer, RgbImage, RgbaImage, };
+use image::{GrayImage, ImageBuffer, RgbImage, RgbaImage};
 use ndarray::{Array2, Array3};
 
 impl ToImageRgba for Array3<u8> {
@@ -38,8 +38,8 @@ impl ToImageGray for Array2<u8> {
 
 #[cfg(test)]
 mod test {
-    use image::{ImageBuffer, Rgba};
     use crate::*;
+    use image::{ImageBuffer, Rgba};
 
     #[test]
     fn test_img_alpha() {
