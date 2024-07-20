@@ -1,6 +1,6 @@
 use super::*;
 use image::{GrayImage, ImageBuffer, RgbImage, RgbaImage, };
-use ndarray::{Array2, Array3, ArrayView2, ArrayView3, ArrayViewMut2, ArrayViewMut3};
+use ndarray::{Array2, Array3};
 
 impl ToImageRgba for Array3<u8> {
     type Out = RgbaImage;
@@ -36,11 +36,10 @@ impl ToImageGray for Array2<u8> {
     }
 }
 
+#[cfg(test)]
 mod test {
-    use image::Rgba;
-    use crate::ToNdarray3;
-    use super::*;
-    use super::ImageBuffer;
+    use image::{ImageBuffer, Rgba};
+    use crate::*;
 
     #[test]
     fn test_img_alpha() {
